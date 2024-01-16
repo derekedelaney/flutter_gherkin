@@ -30,18 +30,12 @@ class GherkinSuiteTestGenerator
   static const String template = '''
 class _CustomGherkinIntegrationTestRunner extends GherkinIntegrationTestRunner {
   _CustomGherkinIntegrationTestRunner({
-    required FlutterTestConfiguration configuration,
-    required StartAppFn appMainFunction,
-    required Timeout scenarioExecutionTimeout,
-    AppLifecyclePumpHandlerFn? appLifecyclePumpHandler,
-    LiveTestWidgetsFlutterBindingFramePolicy? framePolicy,
-  }) : super(
-          configuration: configuration,
-          appMainFunction: appMainFunction,
-          scenarioExecutionTimeout: scenarioExecutionTimeout,
-          appLifecyclePumpHandler: appLifecyclePumpHandler,
-          framePolicy: framePolicy,
-        );
+    required super.configuration,
+    required super.appMainFunction,
+    required super.scenarioExecutionTimeout,
+    super.appLifecyclePumpHandler,
+    super.framePolicy,
+  });
 
   @override
   void onRun() {
